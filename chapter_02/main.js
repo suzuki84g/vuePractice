@@ -19,10 +19,18 @@ var Movable = function (x, y) {
     };
 };
 
-// ボールのインスタンスを生成する
-var ball = new Movable(10, 50) // 初期座標の指定
-// ボールをx方向に5、y方向に3動かす
-ball.move(5, 3);
-// 座標をブラウザのコンソールに出力
-console.log(ball.pos.x);
-console.log(ball.pos.y);
+// ボールオブジェクトを格納する空の配列を用意
+var ball = [];
+// 100個分の繰り返し
+for (var i = 0; i <= 100; i++) {
+    // ボールオブジェクトのインスタンスを作成
+    ball[i] = new Movable(
+        Math.floor(Math.random() * window.interWidth),
+        Math.floor(Math.random() * window.interHeight)
+    );
+};
+
+//ボールをブラウザに描画する
+for (var i = 0; i <= 100; i++) {
+    document.write('<div class="ball" style="top;' + ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;")>●</div>');
+};
