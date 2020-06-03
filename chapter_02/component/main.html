@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="app">
-        {{lang == 'ja' ? message_ja : message_en}}
+        <p v-bind:style="{fontSize:pSize}">文字サイズは{{pSize}}です。</p>
     </div>
     <div id="ball">
     </div>
