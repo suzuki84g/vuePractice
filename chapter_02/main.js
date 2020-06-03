@@ -32,5 +32,6 @@ for (var i = 0; i <= 100; i++) {
 
 //ボールをブラウザに描画する
 for (var i = 0; i <= 100; i++) {
+    // TODO: document.writeの正当性を確認する
     document.write('<div class="ball" style="top;' + ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;")>●</div>');
 };
