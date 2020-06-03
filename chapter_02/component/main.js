@@ -3,21 +3,25 @@
 var app = new Vue({
     el: '#app',
     data: {
-        isCapital: true
+        products: [
+            {code: 'A01', name: 'プロダクトA'},
+            {code: 'B01', name: 'プロダクトB'},
+            {code: 'C01', name: 'プロダクトC'}
+        ]
     }
 });
 
-// 「動くモノ」クラスの定義
-var Movable = function (x, y) {
-    this.pos = {
-        x: x,
-        y: y
-    };
-    this.move = function (x, y) {
-        this.pos.x += x;
-        this.pos.y += y;
-    };
-};
+// // 「動くモノ」クラスの定義
+// var Movable = function (x, y) {
+//     this.pos = {
+//         x: x,
+//         y: y
+//     };
+//     this.move = function (x, y) {
+//         this.pos.x += x;
+//         this.pos.y += y;
+//     };
+// };
 
 // // ボールオブジェクトを格納する空の配列を用意
 // var ball = [];

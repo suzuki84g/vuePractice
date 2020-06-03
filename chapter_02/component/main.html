@@ -7,9 +7,10 @@
 </head>
 <body>
     <div id="app">
-        <p v-bind:class="{capitalize: isCapital}">hello vue!</p>
-    </div>
-    <div id="ball">
+        <tr v-for="item in products">
+            <tr><th>商品コード</th><th>商品名</th></tr>
+            <td>{{item.code}}</td><td>{{item.name}}</td>
+        </tr>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
