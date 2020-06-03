@@ -1,17 +1,17 @@
 `use strict`
 
-var app = new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!'
-    }
-});
+// var app = new Vue({
+//     el: '#app',
+//     data: {
+//         message: 'Hello Vue!'
+//     }
+// });
 
 // 「動くモノ」クラスの定義
 var Movable = function (x, y) {
     this.pos = {
         x: x,
-        y: y,
+        y: y
     };
     this.move = function (x, y) {
         this.pos.x += x;
@@ -25,13 +25,13 @@ var ball = [];
 for (var i = 0; i <= 100; i++) {
     // ボールオブジェクトのインスタンスを作成
     ball[i] = new Movable(
-        Math.floor(Math.random() * window.interWidth),
-        Math.floor(Math.random() * window.interHeight)
+        Math.floor(Math.random()*window.innerWidth),
+        Math.floor(Math.random()*window.innerHeight)
     );
 };
 
 //ボールをブラウザに描画する
 for (var i = 0; i <= 100; i++) {
     // TODO: document.writeの正当性を確認する
-    document.write('<div class="ball" style="top;' + ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;")>●</div>');
+    document.write('<div class="ball" style="top:' + ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;")>●</div>');
 };
