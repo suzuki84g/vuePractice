@@ -1,3 +1,5 @@
 @charset "utf-8";
 
-.ball { position: absolute; }
+.capitalize {
+    text-transform: capitalize;
+}
