@@ -32,6 +32,24 @@ for (var i = 0; i <= 100; i++) {
 
 //ボールをブラウザに描画する
 for (var i = 0; i <= 100; i++) {
-    // TODO: document.writeの正当性を確認する
     document.write('<div class="ball" style="top:' + ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;")>●</div>');
 };
+
+// component
+var ball = new Vue({
+    el: '#ball',
+    data: {
+        pos: { x: 0, y: 0 },
+        radius: 20
+    },
+    methods: {
+        move: function(x, y) {
+            this.pos.x += x;
+            this.pos.y += y;
+        }
+    }
+});
+// ボールをx方向へ100px、y方向へ100px動かす
+ball.move(100, 100);
+// ボールの半径を40pxに変更する
+ball.radius = 40;
