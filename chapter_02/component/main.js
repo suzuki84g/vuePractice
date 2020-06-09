@@ -3,9 +3,16 @@
 var app = new Vue({
     el: '#app',
     data: {
-        price: 980
+        stock: 10
     }
 });
+
+// var app = new Vue({
+//     el: '#app',
+//     data: {
+//         price: 980
+//     }
+// });
 
 // var app = new Vue({
 //     el: '#app',

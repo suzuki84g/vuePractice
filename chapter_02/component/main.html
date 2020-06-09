@@ -7,7 +7,8 @@
 </head>
 <body>
     <div id="app">
-        {{price}}円 <span v-if="price < 1000">セール実施中！</span>
+        <span v-if="stock >= 1">残り{{stock}}個です。</span>
+        <span v-else>在庫切れです。</span>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
