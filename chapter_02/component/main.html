@@ -7,8 +7,7 @@
 </head>
 <body>
     <div id="app">
-        <span v-if="stock >= 1">残り{{stock}}個です。</span>
-        <span v-else>在庫切れです。</span>
+        {{price | number_format}}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
