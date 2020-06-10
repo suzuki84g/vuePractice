@@ -1,30 +1,23 @@
 `use strict`
 
-// Vue.filter('number_format', function (val) {
-//     return val.toLocaleString();
-// });
-
 var app = new Vue({
     el: '#app',
     data: {
-        point: {
-            x: 0,
-            y: 0
-        }
-    },
-    created: function () {
-        // イベントハンドラを登録
-        addEventListener('mousemove', this.mousemoveHandler);
-    },
-    beforeDestroy: function () {
-        // イベントハンドラを解除
-        removeEventListener('mousemove', this.mousemoveHandler);
+        message: '',
+        stock: 10
     },
     methods: {
-        //mousemoveイベントハンドラ
-        mousemoveHandler: function ($event) {
-            this.point.x = $event.clientX;
-            this.point.y = $event.clientY;
+        // 削除ボタンのクリックイベントハンドラ
+        onDeleteItem: function () {
+            this.stock--;
+        }
+    },
+    watch: {
+        // 在庫数が変化した時に呼び出されるハンドラ
+        stock: function (newStock, oldStock) {
+            if (newStock == 0) {
+                this.message = '売り切れ';
+            }
         }
     }
 });
