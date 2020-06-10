@@ -7,11 +7,8 @@
 </head>
 <body>
     <div id="app">
-        <template v-if="stock >= 1">
-            <span class="num">残り{{stock}}個</span>
-            <button class="btn" v-on:click="onDeleteItem">削除</button>
-        </template>
-        <template v-else>在庫切れ</template>
+        ウィンドウの横幅：{{width}}<br>
+        ウィンドウの高さ：{{height}}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
