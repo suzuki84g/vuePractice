@@ -7,15 +7,15 @@
 </head>
 <body>
     <div id="app">
-        <p>ご注文をお選び下さい：{{selection}}</p>
+        <p>当店のサービスは如何でしたか？：{{answer}}</p>
         <label>
-            <input type="checkbox" v-model="answer" value="ケーキ">ケーキ
+            <input type="radio" v-model="answer" value="素晴らしい">素晴らしい
         </label>
         <label>
-            <input type="checkbox" v-model="answer" value="紅茶">紅茶
+            <input type="radio" v-model="answer" value="普通">普通
         </label>
         <label>
-            <input type="checkbox" v-model="answer" value="コーヒー">コーヒー
+            <input type="radio" v-model="answer" value="まだまだ">まだまだ
         </label>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
