@@ -7,11 +7,9 @@
 </head>
 <body>
     <div id="app">
-        <template v-if="stock >= 1">
-            <span class="num">残り{{stock}}個</span>
-            <button class="btn" v-on:click="onDeleteItem">削除</button>
-        </template>
-        {{statusMessage}}
+        <!-- 標準HTML5の入力初期値valueは無視される -->
+        <input type="text" v-model="year">
+        <p>{{year}}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>

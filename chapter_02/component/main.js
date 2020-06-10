@@ -3,28 +3,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: '',
-        stock: 10
-    },
-    methods: {
-        // 削除ボタンのクリックイベントハンドラ
-        onDeleteItem: function () {
-            this.stock--;
-        }
-    },
-    computed: {
-        // 囲うしたメッセージを返す算出property
-        statusMessage: function () {
-            if (this.stock == 0) {
-                return '売り切れ';
-            }
-            return '';
-        }
-    },
-    watch: {
-        // ステータスの変化を監視するウォッチャ
-        statusMessage: function () {
-            console.log('商品のステータスが変化しました。');
-        }
+        //初期値は当年
+        year: (new Date()).getFullYear()
     }
 });
