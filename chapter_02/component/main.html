@@ -7,10 +7,16 @@
 </head>
 <body>
     <div id="app">
-        <label>ケーキはお好きですか？：{{answer}}</label>
-        <input type="checkbox" id="cake" v-model="answer"
-        true-value="はい" false-value="いいえ">
-        <label for="cake">チェックして下さい</label>
+        <p>ご注文をお選び下さい：{{selection}}</p>
+        <label>
+            <input type="checkbox" v-model="answer" value="ケーキ">ケーキ
+        </label>
+        <label>
+            <input type="checkbox" v-model="answer" value="紅茶">紅茶
+        </label>
+        <label>
+            <input type="checkbox" v-model="answer" value="コーヒー">コーヒー
+        </label>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
