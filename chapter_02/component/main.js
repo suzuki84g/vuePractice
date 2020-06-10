@@ -20,5 +20,11 @@ var app = new Vue({
             }
             return '';
         }
+    },
+    watch: {
+        // ステータスの変化を監視するウォッチャ
+        statusMessage: function () {
+            console.log('商品のステータスが変化しました。');
+        }
     }
 });
