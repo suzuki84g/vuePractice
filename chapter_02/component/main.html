@@ -7,9 +7,10 @@
 </head>
 <body>
     <div id="app">
-        <!-- 標準HTML5の入力初期値valueは無視される -->
-        <textarea>{{message}}</textarea>
-        <pre>入力内容：{{message}}</pre>
+        <label>ケーキはお好きですか？：{{answer}}</label>
+        <input type="checkbox" id="cake" v-model="answer"
+        true-value="はい" false-value="いいえ">
+        <label for="cake">チェックして下さい</label>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
