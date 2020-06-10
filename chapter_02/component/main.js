@@ -3,14 +3,20 @@
 var app = new Vue({
     el: '#app',
     data: {
-        // 回答内容（選択された値）
-        answer: '',
-        // 選択肢に表示する配列データ
-        options: [
-            { code: 'ans1', label: '初めて' },
-            { code: 'ans2', label: '週1回以上' },
-            { code: 'ans3', label: '月2回以上' },
-            { code: 'ans4', label: '半年に1回' }
-        ]
+        arrival_date: null
+    },
+    created: function () {
+        // 初期値を設定する
+        this.arrival_date = this.formatDate(new Date());
+    },
+    methods: {
+        // 日付を整形
+        formatDate: function (dt) {
+            var y = dt.getFullYear();
+            var m = ('00' + (dt.getMonth() + 1)).slice(-2);
+            var d = ('00' + dt.getDate()).slice(-2);
+            var result = y + '-' + m + '-' + d;
+            return result;
+        }
     }
 });
