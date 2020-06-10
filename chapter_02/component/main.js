@@ -3,12 +3,13 @@
 var app = new Vue({
     el: '#app',
     data: {
-        answer: '選択してください'
+        category: []
     },
-    // computed: {
-    //     //チェック内容を連結した文字列を返す算出プロパティ
-    //     selection: function () {
-    //         return this.answer.join();
-    //     }
-    // }
+    computed: {
+        // 選択された分類を返す算出プロパティ
+        selectedCategory: function () {
+            // 1件以上選択されている場合、選択された値を連結した文字列を返す
+            return this.category.length >=1 ? this.category.join() : '';
+        }
+    }
 });

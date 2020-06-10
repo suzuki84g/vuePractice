@@ -7,16 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <p>当店のサービスは如何でしたか？：{{answer}}</p>
-        <label>
-            <input type="radio" v-model="answer" value="素晴らしい">素晴らしい
-        </label>
-        <label>
-            <input type="radio" v-model="answer" value="普通">普通
-        </label>
-        <label>
-            <input type="radio" v-model="answer" value="まだまだ">まだまだ
-        </label>
+        <p>分類：{{selectedCategory}}</p>
+        <select v-model="category" multiple>
+            <option value="宿泊費">宿泊費</option>
+            <option value="食費">食費</option>
+            <option value="交通費">交通費</option>
+        </select>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
