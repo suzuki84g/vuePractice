@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="app">
-        {{price | number_format}}
+        {{price | unit}} {{price | number_format | unit}}  <!-- 後者はfilterが適用される -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
