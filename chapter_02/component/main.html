@@ -7,11 +7,14 @@
 </head>
 <body>
     <div id="app">
-        <p>分類：{{selectedCategory}}</p>
-        <select v-model="category" multiple>
-            <option value="宿泊費">宿泊費</option>
-            <option value="食費">食費</option>
-            <option value="交通費">交通費</option>
+        <p>当店のご利用頻度は？：{{answer}}</p>
+        <select v-model="answer">
+            <option disabled value="">選択してください</option>
+            <option v-for="item in options"
+                    v-bind:value="item.label"
+                    v-bind:key="item.code">
+                {{item.label}}
+            </option>
         </select>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

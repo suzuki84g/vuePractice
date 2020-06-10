@@ -3,13 +3,14 @@
 var app = new Vue({
     el: '#app',
     data: {
-        category: []
-    },
-    computed: {
-        // 選択された分類を返す算出プロパティ
-        selectedCategory: function () {
-            // 1件以上選択されている場合、選択された値を連結した文字列を返す
-            return this.category.length >=1 ? this.category.join() : '';
-        }
+        // 回答内容（選択された値）
+        answer: '',
+        // 選択肢に表示する配列データ
+        options: [
+            { code: 'ans1', label: '初めて' },
+            { code: 'ans2', label: '週1回以上' },
+            { code: 'ans3', label: '月2回以上' },
+            { code: 'ans4', label: '半年に1回' }
+        ]
     }
 });
