@@ -12,12 +12,13 @@ var app = new Vue({
             this.stock--;
         }
     },
-    watch: {
-        // 在庫数が変化した時に呼び出されるハンドラ
-        stock: function (newStock, oldStock) {
-            if (newStock == 0) {
-                this.message = '売り切れ';
+    computed: {
+        // 囲うしたメッセージを返す算出property
+        statusMessage: function () {
+            if (this.stock == 0) {
+                return '売り切れ';
             }
+            return '';
         }
     }
 });
