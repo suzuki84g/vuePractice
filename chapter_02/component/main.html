@@ -8,7 +8,7 @@
 <body>
     <div id="app">
         <p>ご希望到着日：{{arrival_date}}</p>
-        <input type="date" v-model="arrival_date">
+        <input type="date" v-model="arrival_date" v-bind:min="min_date">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>

@@ -3,11 +3,18 @@
 var app = new Vue({
     el: '#app',
     data: {
-        arrival_date: null
+        arrival_date: null,
+        min_date: null
     },
     created: function () {
-        // 初期値を設定する
-        this.arrival_date = this.formatDate(new Date());
+        /* // 初期値を設定する
+        this.arrival_date = this.formatDate(new Date()); */
+        // 翌日の日付を初期値とする
+        var dt = new Date();
+        dt.setDate(dt.getDate() + 1);
+        this.arrival_date = this.formatDate(dt);
+        // 翌日の日付を最小値とする
+        this.min_date = this.arrival_date;
     },
     methods: {
         // 日付を整形
