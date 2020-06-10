@@ -7,24 +7,24 @@
 var app = new Vue({
     el: '#app',
     data: {
-        // ウィンドウサイズ
-        width: window.innerWidth,
-        height: window.innerHeight
+        point: {
+            x: 0,
+            y: 0
+        }
     },
     created: function () {
         // イベントハンドラを登録
-        addEventListener('resize', this.resizeHandler);
+        addEventListener('mousemove', this.mousemoveHandler);
     },
     beforeDestroy: function () {
         // イベントハンドラを解除
-        removeEventListener('resize', this.resizeHandler);
+        removeEventListener('mousemove', this.mousemoveHandler);
     },
     methods: {
-        // イベントハンドラ
-        resizeHandler: function ($event) {
-            // 現在のウィンドウサイズでpropertyを更新
-            this.width = $event.target.innerWidth;
-            this.height = $event.target.innerHeight;
+        //mousemoveイベントハンドラ
+        mousemoveHandler: function ($event) {
+            this.point.x = $event.clientX;
+            this.point.y = $event.clientY;
         }
     }
 });
