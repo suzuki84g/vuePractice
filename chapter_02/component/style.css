@@ -1,14 +1,20 @@
 @charset "utf-8";
 
-/* Enterフェーズ開始前と、Leaveフェーズ終了後のスタイル */
-.v-enter, .v-leave-to {
+/* シンプルなフェードイン */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
     opacity: 0;
 }
-/* Enterフェーズ終了時と、Leaveフェーズ開始時のスタイル */
-.v-enter-to, .v-leave {  /* 読み込み順に注意 */
-    opacity: 1;
+/* 左からスライドイン */
+.slideInLeft-enter-active, .slideInLeft-leave-active {
+    transition: opacity 0.5s, transform 0.5s;
 }
-/* Enterフェーズ継続中と、Leaveフェーズ継続中のスタイル */
-.v-enter-active, .v-leave-active {
-    transition: opacity 0.5s;
+.slideInLeft-enter, .slideInLeft-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.slideInLeft-enter-to, .slideInLeft-leave {
+    transform: translateX(0);
 }

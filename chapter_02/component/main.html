@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>component</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <div id="app">
         <button v-on:click="show = !show">表示を切り替える</button>
-        <transition>
+        <transition name="zoom"
+            enter-active-class="animated zoomIn"
+            leave-active-class="animated zoomOut">
             <p v-if="show">
                 吾輩は猫である。名前はまだない。<br>
                 どこで生まれたかとんと検討がつかぬ。<br>
