@@ -88,6 +88,8 @@ body {
   color: #000;
 }
 
+/* classは半角スペースで複数指定、
+cssでは繋げて書くことで階層ではなくand表現になる */
 .item .shipping-fee.none {
   background: #bf0000;
   color: #fff;
