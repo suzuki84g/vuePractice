@@ -34,68 +34,22 @@
             </div>
             <!-- 商品一覧 -->
             <div class="list">
-                <div class="item">
-                    <figure class="image">
+                <div class="item" v-for="product in products">
+                    <template v-if="product.isSale">
                         <div class="status">SALE</div>
-                        <img src="images/01.jpg" alt="">
-                        <figcaption>Michel<br>スマホケース</figcaption>
-                    </figure>
-                    <div class="detail">
-                        <div class="price"><span>1,580</span>円（税込）</div>
-                        <div class="shipping-fee none">送料無料</div>
-                    </div>
-                </div>
-                <div class="item">
+                    </template>
                     <figure class="image">
-                        <div class="status">SALE</div>
-                        <img src="images/02.jpg" alt="">
-                        <figcaption>Raphael<br>スマホケース</figcaption>
+                        <img v-bind:src="product.image" alt="">
+                        <figcaption>{{product.name}}</figcaption>
                     </figure>
                     <div class="detail">
-                        <div class="price"><span>1,580</span>円（税込）</div>
-                        <div class="shipping-fee none">送料無料</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure class="image">
-                        <div class="status">SALE</div>
-                        <img src="images/03.jpg" alt="">
-                        <figcaption>Gabriel<br>スマホケース</figcaption>
-                    </figure>
-                    <div class="detail">
-                        <div class="price"><span>1,580</span>円（税込）</div>
-                        <div class="shipping-fee">+送料240円</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure class="image">
-                        <div class="status">SALE</div>
-                        <img src="images/04.jpg" alt="">
-                        <figcaption>Uriel<br>スマホケース</figcaption>
-                    </figure>
-                    <div class="detail">
-                        <div class="price"><span>980</span>円（税込）</div>
-                        <div class="shipping-fee none">送料無料</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure class="image">
-                        <img src="images/05.jpg" alt="">
-                        <figcaption>Ariel<br>スマホケース</figcaption>
-                    </figure>
-                    <div class="detail">
-                        <div class="price"><span>980</span>円（税込）</div>
-                        <div class="shipping-fee none">送料無料</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure class="image">
-                        <img src="images/06.jpg" alt="">
-                        <figcaption>Azrael<br>スマホケース</figcaption>
-                    </figure>
-                    <div class="detail">
-                        <div class="price"><span>1,580</span>円（税込）</div>
-                        <div class="shipping-fee none">送料無料</div>
+                        <div class="price"><span>{{products.price}}</span>円（税込み）</div>
+                        <template v-if="product.delv == 0">
+                            <div class="sipping-fee none">送料無料</div>
+                        </template>
+                        <template v-else>
+                            <div class="shipping-fee">+送料{{products.delv}}円</div>
+                        </template>
                     </div>
                 </div>
             </div>
