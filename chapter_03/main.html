@@ -34,7 +34,7 @@
             </div>
             <!-- 商品一覧 -->
             <div class="list">
-                <div class="item" v-for="product in products">
+                <div class="item" v-for="product in filteredList">
                     <figure class="image">
                         <template v-if="product.isSale">
                             <div class="status">SALE</div>
