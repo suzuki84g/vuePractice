@@ -35,20 +35,20 @@
             <!-- 商品一覧 -->
             <div class="list">
                 <div class="item" v-for="product in products">
-                    <template v-if="product.isSale">
-                        <div class="status">SALE</div>
-                    </template>
                     <figure class="image">
+                        <template v-if="product.isSale">
+                            <div class="status">SALE</div>
+                        </template>
                         <img v-bind:src="product.image" alt="">
                         <figcaption>{{product.name}}</figcaption>
                     </figure>
                     <div class="detail">
-                        <div class="price"><span>{{products.price}}</span>円（税込み）</div>
+                        <div class="price"><span>{{product.price}}</span>円（税込み）</div>
                         <template v-if="product.delv == 0">
                             <div class="sipping-fee none">送料無料</div>
                         </template>
                         <template v-else>
-                            <div class="shipping-fee">+送料{{products.delv}}円</div>
+                            <div class="shipping-fee">+送料{{product.delv}}円</div>
                         </template>
                     </div>
                 </div>
