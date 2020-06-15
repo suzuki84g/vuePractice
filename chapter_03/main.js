@@ -31,5 +31,17 @@ var app = new Vue({
             { name: 'Ariel<br>スマホケース', price: 980, image: 'images/05.jpg', delv: 0, isSale: false },
             { name: 'Azrael<br>スマホケース', price: 1580, image: 'images/06.jpg', delv: 0, isSale: false },
         ]
+    },
+    watch: {
+        // 「セール対象」チェックボックスの状態を関しするウォッチャ
+        showSaleItem: function (newVal, oldVal) {
+            // ここでproductsの配列を書き換える
+            console.log("showSaleItemウォッチャが呼び出されたよ")
+        },
+        // 「送料無料」チェックボックスの状態を監視するウォッチャ
+        showDelvFree: function (newVal, oldVal) {
+            // ここでproductの配列を書き換える
+            console.log("showDelvFreeウォッチャが呼び出されたよ")
+        }
     }
 });
