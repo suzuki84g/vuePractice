@@ -1,5 +1,10 @@
 `use strict`
 
+// 数値を通過形式「#,###,###」に変換するフィルター
+Vue.filter('number_format', function (val) {
+    return val.toLocaleString();
+});
+
 var app = new Vue({
     el: '#app',
     data: {
