@@ -66,6 +66,15 @@ var app = new Vue({
                     newList.push(this.products[i]);
                 }
             }
+            // 新しい配列を並び替える
+            if (this.sortOrder == 1) {
+                // 標準側なのでそのまま変更無し
+            } else if (this.sortOrder == 2){
+                // 価格が安い順
+                newList.sort(function (a, b) {
+                    return a.price - b.price;
+                });
+            }
             // 絞り込み後の商品リストを返す
             return newList;
         },
