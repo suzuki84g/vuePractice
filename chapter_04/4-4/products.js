@@ -2,10 +2,6 @@
 // 実態は単に関数を呼び出している
 // 処理はローカルに渡してJSONPをscriptで読み込めばクロスドメインを回避出来る
 
-// function products(json) {
-//     // 描画する等の処理
-// }
-
 products([
     { "id": 1, "name": "Michel<br>スマホケース", "price": 1580, "image": "images/01.jpg", "delv": 0, "isSale": true },
     { "id": 2, "name": "Raphael<br>スマホケース", "price": 1580, "image": "images/02.jpg", "delv": 0, "isSale": true },
