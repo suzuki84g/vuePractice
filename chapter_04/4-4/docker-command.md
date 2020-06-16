@@ -6,7 +6,7 @@
 docker build . -t original_alpine_nginx
 
 <!-- コンテナ立ち上げ -->
-docker run -d -p 80:80 --name jsonp_container original_alpine_nginx
+docker run -d -p 3000:80 --name jsonp_container original_alpine_nginx
 
 ## 動作確認と削除
 
