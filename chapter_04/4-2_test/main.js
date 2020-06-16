@@ -16,7 +16,7 @@ function clickHandler(event) {
         }
     };
     // 3. レスポンス形式の指定
-    xmlHttpRequest.responseType = 'JSON';
+    xmlHttpRequest.responseType = 'json';
     // 4. requestメソッドと読み込むファイルのパスを指定
     xmlHttpRequest.open('GET', 'products.json');
     // 5. requestの送信（非同期通信の開始）
