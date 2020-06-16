@@ -2,6 +2,7 @@
 
 // JSONPのURL（githubのrepositoryに上げたファイル）
 var url = 'https://raw.githubusercontent.com/suzuki84g/vuePractice/dev/chapter_04/4-4/jsonp.js';
+var urlLocal ='jsonp.js'
 
 // 非同期通信でJSONPの読み込み
 $.ajax({
