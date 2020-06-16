@@ -19,6 +19,7 @@ function clickHandler(event) {
         .done(function (data, textStatus, jqXHR) {
             // ここに通信成功時の処理を記述
             console.log('通信は成功です。');
+            console.log(jqXHR);  // プロミス表示
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             // ここに通信失敗時の処理を記述
