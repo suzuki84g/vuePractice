@@ -13,18 +13,21 @@ function clickHandler(event) {
             // jsonを変数に格納
             var products = this.response;
             // 商品リストの子ノードを全て削除する
-            var result = document.querySelector('#result')
-            result.textContent = '';
+            var result = document.querySelector('#result')  // classがresultに該当するタグをresultに代入
+            result.textContent = '';  // 内容に空の文字列を代入する
             // 商品の子ノードをDOMに挿入する
             for (var i = 0; i < products.length; i++) {
+                // textの後ろに文字列を追加するを全オブジェクトを回す
                 var text = '商品ID:' + products[i].id;
                 text += ' 商品名:' + products[i].name;
                 text += ' 料金:' + products[i].price;
                 text += ' 画像パス:' + products[i].image;
                 text += ' 送料:' + products[i].delv;
                 text += ' セール対象:' + products[i].isSale;
+                // divの内容にtextを入れる
                 var div = document.createElement('div');
                 div.textContent = text;
+                // divのクラスresultの子に作ったdivを作る
                 result.appendChild(div);
             }
         }
