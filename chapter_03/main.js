@@ -60,14 +60,14 @@ var app = new Vue({
                 if (this.showDelvFree && this.products[i].delv > 0) {
                     // 「送料無料」チェック有りで、送料ありの商品の場合
                     isShow = false;  // この商品は表示しない
-                    // 表示対象の商品だけを新しい配列に追加する
-                    if (isShow) {
-                        newList.push(this.products[i]);
-                    }
                 }
-                // 絞り込み後の商品リストを返す
-                return newList;
+                    // 表示対象の商品だけを新しい配列に追加する（isShowのboolean型が判別）
+                if (isShow) {
+                    newList.push(this.products[i]);
+                }
             }
+            // 絞り込み後の商品リストを返す
+            return newList;
         }
     }
 });
