@@ -68,6 +68,9 @@ var app = new Vue({
             }
             // 絞り込み後の商品リストを返す
             return newList;
+        },
+        count: function () {
+            return this.filteredList.length;
         }
     }
 });
