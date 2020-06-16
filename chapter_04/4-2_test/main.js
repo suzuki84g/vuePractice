@@ -9,8 +9,8 @@ function clickHandler(event) {
     var xmlHttpRequest = new XMLHttpRequest();
     // 2. 通信状態の変化を関しするイベントハンドラの設定
     xmlHttpRequest.onreadystatechange = function () {
-        // 受信が正常に完了した場合をtrue
-        if (this.readyState == 4 && this.status == 200) {
+        // 受信が正常に完了した場合をtrue（ローカルのfileプロトコル使用時はステータス確認をオフ）
+        if (this.readyState /*== 4 && this.status == 200*/) {
             // 受信データをコンソール出力
             console.log(this.readyState, this.response);
         }
