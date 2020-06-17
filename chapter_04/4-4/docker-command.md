@@ -2,12 +2,7 @@
 
 ## 実行用コマンド
 
-<!-- イメージ作成 -->
-docker build . -t original_alpine_nginx
-
-<!-- コンテナ立ち上げ -->
-<!-- TODO:`-v`オプションでマウントの設定を入れる -->
-docker run -d -p 3000:80 --name jsonp_container original_alpine_nginx
+docker run --name jsonp_test -v `$PWD`/app:/usr/share/nginx/html -p 3030:80 nginx
 
 ## 動作確認と削除
 
@@ -15,11 +10,11 @@ docker run -d -p 3000:80 --name jsonp_container original_alpine_nginx
 [docker](https://qiita.com/Yarimizu14/items/52f4859027165a805630)
 [nginx](https://qiita.com/morrr/items/7c97f0d2e46f7a8ec967)
 
-docker images
 docker ps
-<http://127.0.0.1/>
+<http://localhost:3030/>
+<http://localhost:3030/jsonp.js>
 
 ## 削除
 
-docker rm -f jsonp_container
-docker rmi original_alpine_nginx
+docker rm
+docker rmi
