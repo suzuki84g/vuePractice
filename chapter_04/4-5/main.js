@@ -16,21 +16,27 @@ var app = new Vue({
         showDelvFree: false,
         // 並び替えフィルタリング（1：標準、2：安い順）
         sortOrder: 1,
-        /* 商品情報
-        商品名
-        商品画像
-        価格
-        セール対象
-        送料
-        */
-        products: [
-            { id: 1, name: 'Michel<br>スマホケース', price: 1580, image: 'images/01.jpg', delv: 0, isSale: true },
-            { id: 2, name: 'Raphaelf<br>スマホケース', price: 1580, image: 'images/02.jpg', delv: 0, isSale: true },
-            { id: 3, name: 'Gabriel<br>スマホケース', price: 1580, image: 'images/03.jpg', delv: 240, isSale: true },
-            { id: 4, name: 'Uriel<br>スマホケース', price: 980, image: 'images/04.jpg', delv: 0, isSale: true },
-            { id: 5, name: 'Ariel<br>スマホケース', price: 980, image: 'images/05.jpg', delv: 0, isSale: false },
-            { id: 6, name: 'Azrael<br>スマホケース', price: 1580, image: 'images/06.jpg', delv: 0, isSale: false },
-        ]
+        // 商品リストは外部に持たせる
+        products: []
+    },
+    // ライフサイクルハック
+    created: function () {
+        // JSONPのURL
+        var urlLocal = 'http://localhost:3030/jsonp.js'
+        // 非同期通信で読み込む
+        $.ajax({
+            url: urlLocal,
+            type: 'GET',
+            dataType: 'jsonp',
+            jsonp: 'callback',          // クエリ名
+            jsonpCallback: 'products'   // 関数名
+        })
+            .done(function (data, textStatus, jqXHR) {
+                this.products = data;
+            }.bind(this))
+            .fail(function (jqXHRm, textStatus, errorThrown) {
+                console.log('通信が失敗しました');
+            });
     },
     watch: {
         // 「セール対象」チェックボックスの状態を関しするウォッチャ
