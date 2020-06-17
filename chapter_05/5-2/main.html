@@ -51,22 +51,39 @@
 
         <!-- 挙式日 -->
         <div class="form-group row">
-          <label for="" class="col-md-3 col form-label pt-0"><span class="badge badge-danger"></span></label>
-          <input type="text" class="form-control" id="wedding_date">
-          <small class="form-text"></small>
+          <label for="wadding_date" class="col-md-3 col form-label pt-0">挙式日
+            <span class="badge badge-danger">必須</span>
+          </label>
+          <div class="col-md-9">
+            <input type="date" class="form-control" id="wedding_date" placeholder="日付をお選び下さい。">
+            <small class="form-text">結婚式のお日にちを選択してください。</small>
+          </div>
         </div>
         <!-- DVD仕上がり予定日 -->
         <div class="form-group row">
-          <label for="" class="col-md-3 col form-label pt-0"><span class="badge badge-danger"></span></label>
-          <input type="text" class="form-control" id="wedding_date">
-          <small class="form-text"></small>
+          <label for="delivery_date" class="col-md-3 col form-label pt-0">DVD仕上がり予定日
+            <span class="badge badge-danger">必須</span>
+          </label>
+          <dev class="col-md-9">
+            <input type="date" class="form-control" id="delivery_date" min="2019-01-03" placeholder="日付をお選び下さい。">
+            <small class="form-text">挙式日の1週間前までにDVDが必要な場合が多いため、仕上がり予定日を挙式日の1週間前に設定しております。</small>
+          </dev>
         </div>
         <!-- 小計：基本料金 -->
         <div class="form-group row">
-          <label for="" class="col-md-3 col form-label pt-0"><span class="badge badge-danger"></span></label>
-          <input type="text" class="form-control" id="wedding_date">
-          <small class="form-text"></small>
+          <label class="col-md-3 col-form-label pt-0">基本料金（税込）</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input type="text" class="form-control text-right" id="sum_base" value="32,000" readonly>
+              <div class="input-group-append">
+                <label class="input-group-text">円</label>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- オプションメニュー -->
+        <!-- TODO:ここから -->
 
       </form>
     </div>
