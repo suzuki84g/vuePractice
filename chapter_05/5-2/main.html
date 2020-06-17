@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
+  <title>自動見積りフォーム</title>
 </head>
+
 <body>
-    
+  <div id="app">
+    <div class="container bg-dark text-white p-5">
+      <h2 class="text-center border-bottom border-white pb-3 mb-5">
+        自動見積りフォーム
+      </h2>
+      <form>
+        <!-- ムービーの種類 -->
+        <div class="form-group row">
+          <label class="co-md-3 col-form-label pt-0">制作したいムービー
+            <span class="badge badge-banger">必須</span>
+          </label>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="movie_type" id="type1" class="form-check-input" value="余興ムービー" checked>
+                  <label for="type1" class="form-check-label">余興ムービー</label>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" name="movie_type" id="type" value="サプライズムービー">
+                  <label for="type2" class="form-check-label">サプライズムービー</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
+
 </html>
