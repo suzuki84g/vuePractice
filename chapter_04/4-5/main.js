@@ -15,7 +15,11 @@ var app = new Vue({
         // 並び替えフィルタリング（1：標準、2：安い順）
         sortOrder: 1,
         // 商品リストは外部に持たせる
-        products: []
+        products: [],
+        // エラーの有無
+        isError: false,
+        // エラーメッセージ
+        message: ''
     },
     // ライフサイクルハック
     created: function () {
@@ -33,8 +37,10 @@ var app = new Vue({
                 this.products = data;
             }.bind(this))  // bind(this)の振る舞い
             .fail(function (jqXHRm, textStatus, errorThrown) {
+                this.isError = true;
+                this.message = '商品リストの読み込みが失敗しました。';
                 console.log('通信が失敗しました');
-            });
+            }.bind(this));
     },
     watch: {
         // 「セール対象」チェックボックスの状態を関しするウォッチャ
