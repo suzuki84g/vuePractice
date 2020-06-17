@@ -31,7 +31,7 @@ var app = new Vue({
         })
             .done(function (data, textStatus, jqXHR) {
                 this.products = data;
-            }.bind(this))
+            }.bind(this))  // bind(this)の振る舞い
             .fail(function (jqXHRm, textStatus, errorThrown) {
                 console.log('通信が失敗しました');
             });
