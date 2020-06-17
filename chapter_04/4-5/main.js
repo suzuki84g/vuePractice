@@ -8,8 +8,6 @@ Vue.filter('number_format', function (val) {
 var app = new Vue({
     el: '#app',
     data: {
-        // 表示中の商品数
-        count: 0,
         // セール状態絞り込みチェック
         showSaleItem: false,
         // 送料無料絞り込みチェック
