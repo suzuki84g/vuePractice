@@ -24,7 +24,7 @@ app.querySelector('#opt2').addEventListener('change', onInputChanged, false);
 // 入力内容変更イベント（DVD盤面印刷）
 app.querySelector('#opt3').addEventListener('change', onInputChanged, false);
 // 入力内容変更イベント（写真スキャニング）
-app.querySelector('#opt4').addEventListener('change', onInputChanged, false);
+app.querySelector('#opt4').addEventListener('input', onInputChanged, false);
 
 //-------------------------------
 // イベントハンドラ
@@ -48,6 +48,21 @@ function onInputChanged(event) {
 //-------------------------------
 // 関数
 //-------------------------------
+
+// 日付をYYYY-MM-DDの書式で返すメソッド
+function formatDate(dt) {
+    var y = dt.getFullYear();
+    var m = ('00' + (dt.getMonth()+1)).slice(-2);
+    var d = ('00' + dt.getDate()).slice(-2);
+    return (y + '-' + m + '-' + d);
+}
+
+// 明日の日付をYYYY-MM-DDの書式で返す関数
+function tomorrow() {
+    var dt = new Date();
+    dt.setDate(dt.getDate() + 1);
+    return formatDate(dt);
+}
 
 // 金額の表示を更新する関数
 function updateForm() {
