@@ -64,8 +64,40 @@ function tomorrow() {
     return formatDate(dt);
 }
 
+// 税抜金額を税込み金額に変換する関数
+function incTax(untaxed) {
+    return Math.floor(untaxed * (1 + taxRate));
+}
+
+// 数値を通過書式「#,###,###」に変換する関数
+function number_format(val) {
+    return val.toLocaleString();
+}
+
+// 再計算した基本料金（税込み）を返す関数
+function taxedBasePrice() {
+    // 基本料金（税込み）を返す
+}
+
+// 再計算したオプション料金（税込み）を返す関数
+function taxedOptPrice() {
+    // オプション料金（税込み）を返す
+}
+
 // 金額の表示を更新する関数
 function updateForm() {
+    // フォームコントロールを取得
+    var sum_base = app.querySelector('#sum_base')  // 基本料金
+    var sum_opt = app.querySelector('#sum_opt')  // オプション料金
+    var sum_total = app.querySelector('#sum_total')  // 合計
+
     // 金額を再計算
-    // 表示を更新
+    var basePrice = taxedBasePrice();  // 基本料金（税込み）
+    var optPrice = taxedOptPrice();  // オプション料金（税込み）
+    var totalPrice = basePrice + optPrice;  // 合計（税込み）
+
+    // 表示を更新（HTMLのvalueの値に再計算した金額を変数更新）
+    sum_base.value = number_format(basePrice);  // 基本料金
+    sum_opt.value = number_format(optPrice);  // オプション料金
+    sum_total.value = number_format(totalPrice);  // 合計
 }
