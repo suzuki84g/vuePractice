@@ -141,7 +141,7 @@ var app = new Vue({
             if (this.opt4_num == '') { this.opt4_num = 0; }
             optPrice += this.opt4_num * this.opt4_price;
             // オプション料金（税込み）を返す
-            return this.incTax(optPrice)
+            return this.incTax(optPrice);
         },
         // 合計金額を返す算出プロパティ
         taxedTotalPrice: function () {
