@@ -24,25 +24,25 @@
             <div class="row">
               <div class="col-md-5">
                 <div class="form-check form-check-inline">
-                  <input type="radio" class="form-check-input" id="type1" name="movie_type" value="余興ムービー" checked>
+                  <input type="radio" class="form-check-input" id="type1" name="movie_type" value="余興ムービー" v-model="movieType">
                   <label for="type1" class="form-check-label">余興ムービー</label>
                 </div>
               </div>
               <div class="col-md-5">
                 <div class="form-check form-check-inline">
-                  <input type="radio" class="form-check-input" id="type2" name="movie_type" value="サプライズムービー">
+                  <input type="radio" class="form-check-input" id="type2" name="movie_type" value="サプライズムービー" v-model="movieType">
                   <label for="type2" class="form-check-label">サプライズムービー</label>
                 </div>
               </div>
               <div class="col-md-5">
                 <dev class="form-check form-check-inline">
-                  <input type="radio" class="form-check-input" id="type3" name="movie_type" value="生い立ちムービー">
+                  <input type="radio" class="form-check-input" id="type3" name="movie_type" value="生い立ちムービー" v-model="movieType">
                   <label for="" class="form-check-label">生い立ちムービー</label>
                 </dev>
               </div>
               <div class="col-md-5">
                 <dev class="form-check form-check-inline">
-                  <input type="radio" class="form-check-input" id="type4" name="movie_type" value="オープニングムービー">
+                  <input type="radio" class="form-check-input" id="type4" name="movie_type" value="オープニングムービー" v-model="movieType">
                   <label for="" class="form-check-label">オープニングムービー</label>
                 </dev>
               </div>
@@ -55,7 +55,7 @@
             <span class="badge badge-danger">必須</span>
           </label>
           <div class="col-md-9">
-            <input type="date" class="form-control" id="wedding_date" placeholder="日付をお選び下さい。">
+            <input type="date" class="form-control" id="wedding_date" placeholder="日付をお選び下さい。" v-model="wedding_date">
             <small class="form-text">結婚式のお日にちを選択してください。</small>
           </div>
         </div>
@@ -65,7 +65,7 @@
             <span class="badge badge-danger">必須</span>
           </label>
           <dev class="col-md-9">
-            <input type="date" class="form-control" id="delivery_date" min="2019-01-03" placeholder="日付をお選び下さい。">
+            <input type="date" class="form-control" id="delivery_date" v-bind:min="tomorrow" placeholder="日付をお選び下さい。" v-model="delivery_date">
             <small class="form-text">挙式日の1週間前までにDVDが必要な場合が多いため、仕上がり予定日を挙式日の1週間前に設定しております。</small>
           </dev>
         </div>
@@ -74,7 +74,7 @@
           <label class="col-md-3 col-form-label pt-0">基本料金（税込）</label>
           <div class="col-md-9">
             <div class="input-group">
-              <input type="text" class="form-control text-right" id="sum_base" value="32,000" readonly>
+              <input type="text" class="form-control text-right" id="sum_base" v-bind:value="taxedBasePrice" readonly>
               <div class="input-group-append">
                 <label class="input-group-text">円</label>
               </div>

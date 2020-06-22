@@ -47,16 +47,14 @@ var app = new Vue({
         // 写真スキャニング
         opt4_num: 0,
         opt4_price: 500,
-        // 翌日の日付
-        tomorrow: null,
     },
-    method: {
+    methods: {
         // 税抜金額を税込みにする
-        incTax: function incTax(untaxed) {
-            return Math.floor(untaxed * (1 + taxRate));
+        incTax: function (untaxed) {
+            return Math.floor(untaxed * (1 + this.taxRate));
         },
         // 日付の差を求める関数
-        getDateDiff: function getDateDiff(dateString1, dateString2) {
+        getDateDiff: function (dateString1, dateString2) {
             // 日付を表す文字列から日付オブジェクトを作成
             var date1 = new Date(dateString1);
             var date2 = new Date(dateString2);
@@ -67,7 +65,7 @@ var app = new Vue({
             return Math.ceil(msDiff / (1000 * 60 * 60 * 24));
         },
         // 日付をYYYY-MM-DDの書式で返すメソッド
-        formatData: function formatDate(dt) {
+        formatDate: function (dt) {
             var y = dt.getFullYear();
             var m = ('00' + (dt.getMonth() + 1)).slice(-2);
             var d = ('00' + dt.getDate()).slice(-2);
@@ -150,11 +148,11 @@ var app = new Vue({
             // 基本料金＋オプション料金
             return (this.taxedBasePrice + this.taxedOptPrice);
         },
-        // 明日の日付をYYYY-MM-DDで返す
+        // 明日の日付をYYYY-MM-DDの書式で返す算出プロパティ
         tomorrow: function() {
             var dt = new Date();
             dt.setDate(dt.getDate() + 1);
-            return formatDate(dt);
+            return this.formatDate(dt);
         },
         created: function () {
             // 今日の日付を取得
@@ -165,10 +163,6 @@ var app = new Vue({
             // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
             dt.setDate(dt.getDate() - 7);
             this.delivery_date = this.formatDate(dt);
-            // DVD仕上がり予定日に翌日以降しか入力出来ないようにする
-            dt = new Date();
-            dt.setDate(dt.getDate() + 1);
-            this.tomorrow = this.formatDate(dt);
         }
     }
 });
