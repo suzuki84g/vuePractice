@@ -41,7 +41,9 @@ var app = new Vue({
         opt3_price: 5000,
         // 写真スキャニング
         opt4_num: 0,
-        opt4_price: 500
+        opt4_price: 500,
+        // 翌日の日付
+        tomorrow: null,
     },
     method: {
         // 税抜金額を税込みにする
@@ -124,7 +126,6 @@ var app = new Vue({
         },
         // オプション料金を返す算出プロパティ
         taxedOptPrice: function () {
-            // todo:
             // オプション料金
             var optPrice = 0;
             // BGM手配
@@ -144,6 +145,12 @@ var app = new Vue({
             // 基本料金＋オプション料金
             return (this.taxedBasePrice + this.taxedOptPrice);
         },
+        // 明日の日付をYYYY-MM-DDで返す
+        tomorrow: function() {
+            var dt = new Date();
+            dt.setDate(dt.getDate() + 1);
+            return formatDate(dt);
+        },
         created: function () {
             // 今日の日付を取得
             var dt = new Date();
@@ -153,6 +160,10 @@ var app = new Vue({
             // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
             dt.setDate(dt.getDate() - 7);
             this.delivery_date = this.formatDate(dt);
+            // DVD仕上がり予定日に翌日以降しか入力出来ないようにする
+            dt = new Date();
+            dt.setDate(dt.getDate() + 1);
+            this.tomorrow = this.formatDate(dt);
         }
     }
 });
@@ -206,17 +217,10 @@ function onInputChanged(event) {
 // 関数
 //-------------------------------
 
-// 明日の日付をYYYY-MM-DDの書式で返す関数
-function tomorrow() {
-    var dt = new Date();
-    dt.setDate(dt.getDate() + 1);
-    return formatDate(dt);
-}
-
-// 数値を通過書式「#,###,###」に変換する関数
-function number_format(val) {
-    return val.toLocaleString();
-}
+// // 数値を通過書式「#,###,###」に変換する関数
+// function number_format(val) {
+//     return val.toLocaleString();
+// }
 
 // 金額の表示を更新する関数
 function updateForm() {
