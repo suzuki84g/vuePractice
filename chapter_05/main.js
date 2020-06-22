@@ -82,11 +82,11 @@ var app = new Vue({
             return this.incTax(this.opt2_price);
         },
         // オプション「DVD盤面印刷」の税込み金額を返す算出プロパティ
-        taxedOpt1: function () {
+        taxedOpt3: function () {
             return this.incTax(this.opt3_price);
         },
         // オプション「写真スキャニング」の税込み金額を返す算出プロパティ
-        taxedOpt1: function () {
+        taxedOpt4: function () {
             return this.incTax(this.opt4_price);
         },
         // 基本料金を返す算出プロパティ
