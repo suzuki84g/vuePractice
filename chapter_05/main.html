@@ -89,33 +89,33 @@
           </label>
           <div class="col-md-9">
             <div class="form-check mb-3">
-              <input type="checkbox" class="form-check-input" id="opt1">
-              <label for="opt1" class="form-check-label">BGM手配 ＋5,400円</label>
-              <small class="form-text">当社で曲を手配させて頂く場合は、1曲あたり5,400円（税込み）がかかります。</small>
+              <input type="checkbox" class="form-check-input" id="opt1" v-model="opt1_use">
+              <label for="opt1" class="form-check-label">BGM手配 +{{taxedOpt1 | number_format}}円</label>
+              <small class="form-text">当社で曲を手配させて頂く場合は、1曲あたり{{taxedOpt1 | number_format}}円（税込み）がかかります。</small>
             </div>
             <div class="form-check mb-3">
-              <input type="checkbox" class="form-check-input" id="opt2">
-              <label for="opt2" class="form-check-label">撮影 +5,400円</label>
+              <input type="checkbox" class="form-check-input" id="opt2" v-model="opt2_use">
+              <label for="opt2" class="form-check-label">撮影 +{{taxedOpt2 | number_format}}円</label>
               <small class="form-text">当社に撮影を依頼する場合の料金です。</small>
             </div>
             <div class="form-check mb-3">
-              <input type="checkbox" class="form-check-input" id="opt3">
-              <label for="opt3" class="form-check-label">DVD盤面印刷 +5,400円</label>
-              <small class="form-text">当社でDVDの盤面をデザインさせて頂く場合は、5,400円（税込み）がかかります。</small>
+              <input type="checkbox" class="form-check-input" id="opt3" v-model="opt3_use">
+              <label for="opt3" class="form-check-label">DVD盤面印刷 +{{taxedOpt3 | number_format}}円</label>
+              <small class="form-text">当社でDVDの盤面をデザインさせて頂く場合は、{{taxedOpt3 | number_format}}円（税込み）がかかります。</small>
             </div>
             <div class="form-row mb-3 align-items-center">
               <div class="col-auto">
-                <label for="opt4" class="form-check-label">写真スキャニング +540円</label>
+                <label for="opt4" class="form-check-label">写真スキャニング +{{taxedOpt4 | number_format}}円</label>
               </div>
               <div class="col-auto">
                   <div class="input-group">
-                    <input type="number" id="opt4" class="form-control" value="0" min="0" max="30">
+                    <input type="number" id="opt4" class="form-control" value="0" min="0" max="30" v-model.number="opt4_num">
                     <div class="input-group-append">
                       <label for="opt4" class="input-group-text">枚</label>
                     </div>
                   </div>
                 </div>
-                <small class="form-text">プリントアウトした写真のスキャニングをご希望の方は、1枚あたり540円にて承ります</small>
+                <small class="form-text">プリントアウトした写真のスキャニングをご希望の方は、1枚あたり{{taxedOpt4 | number_format}}円にて承ります</small>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
           <label class="col-md-3 col-form-label pt-0">オプション料金（税込み）</label>
           <div class="col-md-9">
             <div class="input-group">
-              <input type="text" value="0" class="form-control text-right" id="sum_opt" readonly>
+              <input type="text" class="form-control text-right" id="sum_opt" v-bind:value="taxedOptPrice | number_format" readonly>
               <div class="input-group-append">
                 <label class="input-group-text">円</label>
               </div>
