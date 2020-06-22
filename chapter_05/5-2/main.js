@@ -7,7 +7,41 @@
 var app = new Vue({
     el: '#app',
     data: {
-        // データ定義
+        // 消費税率
+        taxRate: 0.08,
+        // 制作したいムービー
+        movieType: '余興ムービー',
+        // 基本料金
+        basePrice: 30000,
+        // 割増料金
+        addPrice1: 5000,  // 4週間未満
+        addPrice2: 10000,  // 3週間未満
+        addPrice3: 15000,  // 2週間未満
+        addPrice4: 20000,  // 1週間未満
+        addPrice5: 40000,  // 3日未満
+        addPrice6: 45000,  // 2日未満
+        addPrice7: 40000,  // 翌日納品
+        // オプション料金
+        optPrice: 0,
+        // 合計料金
+        totalPrice: 0,
+        // 挙式日（YYYY-MM-DD）
+        wedding_date: '',
+        // DVD仕上がり予定日（YYYY-MM-DD）
+        delivery_date: '',
+        // オプション各種のbooleanと料金
+        // BGM手配
+        opt1_use: false,
+        opt1_price: 5000,
+        // 撮影
+        opt2_use: false,
+        opt2_price: 5000,
+        // DVD盤面印刷
+        opt3_use: false,
+        opt3_price: 5000,
+        // 写真スキャニング
+        opt4_num: 0,
+        opt4_price: 500
     }
 });
 
