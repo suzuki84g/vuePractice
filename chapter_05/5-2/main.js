@@ -74,12 +74,14 @@ function number_format(val) {
     return val.toLocaleString();
 }
 
-// 再計算した基本料金（税込み）を返す関数
+// TODO:日付を求める関数
+
+//  TODO:再計算した基本料金（税込み）を返す関数
 function taxedBasePrice() {
     // 基本料金（税込み）を返す
 }
 
-// 再計算したオプション料金（税込み）を返す関数
+// TODO:再計算したオプション料金（税込み）を返す関数
 function taxedOptPrice() {
     // オプション料金（税込み）を返す
 }
