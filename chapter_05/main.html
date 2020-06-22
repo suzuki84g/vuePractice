@@ -35,16 +35,16 @@
                 </div>
               </div>
               <div class="col-md-5">
-                <dev class="form-check form-check-inline">
+                <div class="form-check form-check-inline">
                   <input type="radio" class="form-check-input" id="type3" name="movie_type" value="生い立ちムービー" v-model="movieType">
                   <label for="" class="form-check-label">生い立ちムービー</label>
-                </dev>
+                </div>
               </div>
               <div class="col-md-5">
-                <dev class="form-check form-check-inline">
+                <div class="form-check form-check-inline">
                   <input type="radio" class="form-check-input" id="type4" name="movie_type" value="オープニングムービー" v-model="movieType">
                   <label for="" class="form-check-label">オープニングムービー</label>
-                </dev>
+                </div>
               </div>
             </div>
           </div>
@@ -64,10 +64,10 @@
           <label for="delivery_date" class="col-md-3 col form-label pt-0">DVD仕上がり予定日
             <span class="badge badge-danger">必須</span>
           </label>
-          <dev class="col-md-9">
+          <div class="col-md-9">
             <input type="date" class="form-control" id="delivery_date" v-bind:min="tomorrow" placeholder="日付をお選び下さい。" v-model="delivery_date">
             <small class="form-text">挙式日の1週間前までにDVDが必要な場合が多いため、仕上がり予定日を挙式日の1週間前に設定しております。</small>
-          </dev>
+          </div>
         </div>
         <!-- 小計：基本料金 -->
         <div class="form-group row">
