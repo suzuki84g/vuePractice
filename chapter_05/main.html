@@ -74,7 +74,7 @@
           <label class="col-md-3 col-form-label pt-0">基本料金（税込）</label>
           <div class="col-md-9">
             <div class="input-group">
-              <input type="text" class="form-control text-right" id="sum_base" v-bind:value="taxedBasePrice" readonly>
+              <input type="text" class="form-control text-right" id="sum_base" v-bind:value="taxedBasePrice|number_format" readonly>
               <div class="input-group-append">
                 <label class="input-group-text">円</label>
               </div>
