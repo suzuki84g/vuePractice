@@ -124,7 +124,7 @@ var app = new Vue({
                 // 納期が翌日の場合
                 addPrice = this.addPrice7;
             }
-                // 基本料金（税込み）を返す
+            // 基本料金（税込み）を返す
             return this.incTax(this.basePrice + addPrice);
         },
         // オプション料金を返す算出プロパティ
@@ -149,20 +149,20 @@ var app = new Vue({
             return (this.taxedBasePrice + this.taxedOptPrice);
         },
         // 明日の日付をYYYY-MM-DDの書式で返す算出プロパティ
-        tomorrow: function() {
+        tomorrow: function () {
             var dt = new Date();
             dt.setDate(dt.getDate() + 1);
             return this.formatDate(dt);
-        },
-        created: function () {
-            // 今日の日付を取得
-            var dt = new Date();
-            // 挙式日に二ヶ月後の日付を設定
-            dt.setMonth(dt.getMonth() + 2);
-            this.wedding_date = this.formatDate(dt);
-            // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
-            dt.setDate(dt.getDate() - 7);
-            this.delivery_date = this.formatDate(dt);
         }
+    },
+    created: function () {
+        // 今日の日付を取得
+        var dt = new Date();
+        // 挙式日に二ヶ月後の日付を設定
+        dt.setMonth(dt.getMonth() + 2);
+        this.wedding_date = this.formatDate(dt);
+        // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
+        dt.setDate(dt.getDate() - 7);
+        this.delivery_date = this.formatDate(dt);
     }
 });
