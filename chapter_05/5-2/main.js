@@ -58,6 +58,13 @@ var app = new Vue({
             // 求めた差分（ミリ秒）を日付に変換
             // 差分÷（1000ミリ秒*60秒*60分*24時間）
             return Math.ceil(msDiff / (1000 * 60 * 60 * 24));
+        },
+        // 日付をYYYY-MM-DDの書式で返すメソッド
+        formatData: function formatDate(dt) {
+            var y = dt.getFullYear();
+            var m = ('00' + (dt.getMonth() + 1)).slice(-2);
+            var d = ('00' + dt.getDate()).slice(-2);
+            return (y + '-' + m + '-' + d);
         }
     },
     computed: {
@@ -136,6 +143,16 @@ var app = new Vue({
         taxedTotalPrice: function () {
             // 基本料金＋オプション料金
             return (this.taxedBasePrice + this.taxedOptPrice);
+        },
+        created: function () {
+            // 今日の日付を取得
+            var dt = new Date();
+            // 挙式日に二ヶ月後の日付を設定
+            dt.setMonth(dt.getMonth() + 2);
+            this.wedding_date = this.formatDate(dt);
+            // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
+            dt.setDate(dt.getDate() - 7);
+            this.delivery_date = this.formatDate(dt);
         }
     }
 });
@@ -188,14 +205,6 @@ function onInputChanged(event) {
 //-------------------------------
 // 関数
 //-------------------------------
-
-// 日付をYYYY-MM-DDの書式で返すメソッド
-function formatDate(dt) {
-    var y = dt.getFullYear();
-    var m = ('00' + (dt.getMonth()+1)).slice(-2);
-    var d = ('00' + dt.getDate()).slice(-2);
-    return (y + '-' + m + '-' + d);
-}
 
 // 明日の日付をYYYY-MM-DDの書式で返す関数
 function tomorrow() {
