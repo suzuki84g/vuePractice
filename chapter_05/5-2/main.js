@@ -129,7 +129,24 @@ function taxedBasePrice() {
 
 // TODO:再計算したオプション料金（税込み）を返す関数
 function taxedOptPrice() {
+    // オプション料金
+    var optPrice = 0;
+    // フォームコントロールを取得
+    var opt1 = app.querySelector('#opt1');  // BGM手配
+    var opt2 = app.querySelector('#opt2');  // 撮影
+    var opt3 = app.querySelector('#opt3');  // DVD盤面印刷
+    var opt4 = app.querySelector('#opt4');  // 写真スキャニング
+    // BGM手配
+    if (opt1.checked) { optPrice += 5000; }
+    // 撮影
+    if (opt2.checked) { optPrice += 5000; }
+    // DVD盤面印刷
+    if (opt3.checked) { optPrice += 5000; }
+    // 写真スキャニング
+    if (opt4.value == '') { opt4 = 0; }
+    optPrice += opt4.value * 500;
     // オプション料金（税込み）を返す
+    return incTax(optPrice);
 }
 
 // 金額の表示を更新する関数
