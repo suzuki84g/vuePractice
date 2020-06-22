@@ -42,6 +42,43 @@ var app = new Vue({
         // 写真スキャニング
         opt4_num: 0,
         opt4_price: 500
+    },
+    method: {
+        // 税抜金額を税込みにする
+        incTax: function incTax(untaxed) {
+            return Math.floor(untaxed * (1 + taxRate));
+        }
+    },
+    computed: {
+        // オプション「BGM手配」の税込み金額を返す算出プロパティ
+        taxedOpt1: function () {
+            return this.incTax(this.opt1_price);
+        },
+        // オプション「撮影」の税込み金額を返す算出プロパティ
+        taxedOpt2: function () {
+            return this.incTax(this.opt2_price);
+        },
+        // オプション「DVD盤面印刷」の税込み金額を返す算出プロパティ
+        taxedOpt1: function () {
+            return this.incTax(this.opt3_price);
+        },
+        // オプション「写真スキャニング」の税込み金額を返す算出プロパティ
+        taxedOpt1: function () {
+            return this.incTax(this.opt4_price);
+        },
+        // 基本料金を返す算出プロパティ
+        taxedBasePrice: function () {
+            // todo:
+        },
+        // オプション料金を返す算出プロパティ
+        taxedOptPrice: function () {
+            // todo:
+        },
+        // 合計金額を返す算出プロパティ
+        taxedTotalPrice: function () {
+            // 基本料金＋オプション料金
+            return (this.taxedBasePrice + this.taxedOptPrice);
+        }
     }
 });
 
@@ -109,10 +146,6 @@ function tomorrow() {
     return formatDate(dt);
 }
 
-// 税抜金額を税込み金額に変換する関数
-function incTax(untaxed) {
-    return Math.floor(untaxed * (1 + taxRate));
-}
 
 // 数値を通過書式「#,###,###」に変換する関数
 function number_format(val) {
