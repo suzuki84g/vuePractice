@@ -5,15 +5,20 @@ var app = new Vue({
         price: 880
     },
     methods: {
-        // （５）子から呼び出されるメソッド
-        priceDown: function (discount) {
-            // 下げ幅の指定が無い場合は100円引き（未定義）
-            if (discount == undefined) discount = 100;
-            // 値下げする
+        priceDown: function () {
+            var discount = 0;
+            if (this.price - 50 < 500) {
+                // 例）現在の価格が530円の場合、値下げ幅は30円
+                discount = this.price - 500;
+            } else {
+                // 例）現在の価格が550円以上の場合、値下げ幅は50円
+                discount = 50;
+            }
+            // // 第荷引数が追加されている
+            // this.$emit('child-click', discount);
+
+            // 値引きする
             this.price -= discount;
         }
-    },
-    components: {
-        'my-component': myComponent
     }
 });
