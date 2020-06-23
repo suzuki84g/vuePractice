@@ -13,7 +13,7 @@
     <table border="1">
       <tbody>
         <!-- 商品データの配列をtrで繰り返したい -->
-        <my-row v-for="item in products" v-bind="item" v-bind:key="id"></my-row>
+        <tr is="my-row" v-for="item in products" v-bind="item" v-bind:key="id"></tr>
       </tbody>
     </table>
   </div>
