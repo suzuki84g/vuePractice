@@ -2,11 +2,12 @@
 
 Vue.component('show-hello', {
     // テンプレート
-    template: '<p>{{message}}</p>',
+    template: '<span>{{name}}</span>:<span>{{price}}円</span>',
     // data
     data: function () {
         return {
-            message: 'Hello.'
+            name: 'スマホケース',
+            price: 980
         }
     },
     // メソッド
