@@ -2,7 +2,7 @@
 
 Vue.component('show-hello', {
     // テンプレート
-    template: '<span>{{name}}</span>:<span>{{price}}円</span>',
+    template: '<div><span>{{name}}</span>:<span>{{price}}円</span></div>',
     // data
     data: function () {
         return {
