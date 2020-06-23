@@ -9,9 +9,14 @@
 
 <body>
   <div id="app">
-    <!-- // （４）子に「child-click」イベントが発生したら親の「priceDown」を呼び出す -->
-    <!-- （１）子コンポーネントをクリックすると親の「priceDown」が呼び出される -->
-    <my-product v-on:click.native="priceDown" v-bind:price="price"></my-product>
+    <!-- 子のコンポーネントのテンプレートで配列データを描画する -->
+    <ul>
+      <my-product v-for="item in products"
+                  v-bind="item"
+                  v-bind:key="item.id">
+
+      </my-product>
+    </ul>
   </div>
   <script src="https://jp.vuejs.org/js/vue.js"></script>
   <script src="my-component.js"></script>
