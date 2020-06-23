@@ -9,16 +9,13 @@
 
 <body>
   <div id="app">
-    <!-- <p>描画されるコンポーネント</p> -->
-    <my-component></my-component>
+    <!-- nameとpriceをデータに入れて子に渡す -->
+    <my-product name="スマホケースA" price="980"></my-product>
+    <my-product name="スマホケースB" price="1580"></my-product>
   </div>
-  <div id="app2">
-    <!-- <p>描画されないコンポーネント</p> -->
-    <my-component></my-component>
-  </div>
-
   <script src="https://jp.vuejs.org/js/vue.js"></script>
   <script src="my-component.js"></script>
+  <script src="my-product.js"></script>
   <script src="main.js"></script>
 
 </body>
