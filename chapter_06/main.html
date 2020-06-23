@@ -8,19 +8,20 @@
 </head>
 
 <body>
-  <div id="app">
-    <!-- 子のコンポーネントのテンプレートで配列データを描画する -->
-    <ul>
-      <my-product v-for="item in products"
-                  v-bind="item"
-                  v-bind:key="item.id">
 
-      </my-product>
-    </ul>
+  <div id="app">
+    <table border="1">
+      <tbody>
+        <!-- 商品データの配列をtrで繰り返したい -->
+        <my-row v-for="item in products" v-bind="item" v-bind:key="id"></my-row>
+      </tbody>
+    </table>
   </div>
+
   <script src="https://jp.vuejs.org/js/vue.js"></script>
   <script src="my-component.js"></script>
   <script src="my-product.js"></script>
+  <script src="my-row.js"></script>
   <script src="main.js"></script>
 
 </body>
