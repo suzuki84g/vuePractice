@@ -11,12 +11,12 @@ var productHeader = {
             </div>
             <div class="condition">
                 <div class="target">
-                    <label><input type="checkbox" v-bind:checked="showSaleItem" v-on:change="$emit('showSaleItemChanged')">セール対象{{showSaleItem}}</label>
-                    <label><input type="checkbox" v-bind:checked="showDelvFree" v-on:change="$emit('showDelvFreeChanged')">送料無料{{showDelvFree}}</label>
+                    <label><input type="checkbox" v-bind:checked="showSaleItem" v-on:change="$emit('showSaleItemChanged')">セール対象</label>
+                    <label><input type="checkbox" v-bind:checked="showDelvFree" v-on:change="$emit('showDelvFreeChanged')">送料無料</label>
                 </div>
                 <div class="sort">
                     <label for="sort">並び替え</label>
-                    <select id="sort" class="sorting" v-bind:value="sortOrder" v-change="$emit('sortOrderChanged', parseInt($event.target.value))">
+                    <select id="sort" class="sorting" v-bind:value="sortOrder" v-on:change="$emit('sortOrderChanged', parseInt($event.target.value))">
                         <option value="1">標準</option>
                         <option value="2">価格が安い順</option>
                     </select>
