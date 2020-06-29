@@ -9,6 +9,7 @@ Vue.component('product-list', {
             v-bind:showDelvFree="showDelvFree"
             v-bind:sortOrder="sortOrder"
             v-on:showSaleItemChanged="showSaleItem=!showSaleItem"
+            v-on:showDelvFreeChanged="showDelvFree=!showDelvFree"
             v-on:sortOrderChanged="sortOrderChanged"
         >
         </product-header>
