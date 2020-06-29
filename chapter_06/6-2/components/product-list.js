@@ -16,7 +16,7 @@ Vue.component('product-list', {
             <product
                 v-for="product in filteredList"
                 v-bind:product="product"
-                v-bind;key="product.id">
+                v-bind:key="product.id">
             </product>
         </div>
     </div>`,
