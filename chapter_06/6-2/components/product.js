@@ -12,7 +12,7 @@ var product = {
         </figure>
         <div class="detail">
             <div class="price">
-                <span>{{product.price|number?format}}</span>円（税込）
+                <span>{{product.price|number_format}}</span>円（税込）
             </div>
             <template v-if="product.delv == 0">
                 <div class="shipping-fee none">送料無料</div>
