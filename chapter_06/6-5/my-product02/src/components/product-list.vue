@@ -22,7 +22,7 @@
 
 <script>
 import productHeader from './product-header.vue';
-import product from './product.vue'
+import product from './product.vue';
 
 export default {
   
