@@ -10,10 +10,10 @@
 import productList from './components/product-list.vue'
 
 export default {
-  name: 'App', 
+  name: 'App',
   components: {
     'product-list': productList
-  }, 
+  },
   data: function() {
     return {
       // main.jsから移植
